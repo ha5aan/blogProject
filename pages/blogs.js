@@ -10,10 +10,10 @@ const Blogs = (props) => {
     const [count, setCount] = useState(1)
  
     const fetchData = async () => {
-        let d = await fetch(`http://localhost:3000/api/blogs/?count=${count + 1}`)
+        let d = await fetch(`http://localhost:3000/api/getBlogsFromMongoDB/?count=${count + 1}`)
         setCount(count + 1)
         let data = await d.json()
-        setBlogs(data)
+        setBlogs(data.data)
     };
 
 
@@ -32,11 +32,11 @@ const Blogs = (props) => {
         }
       >
         {blogs.map((blogitem) => {
-          return <div key={blogitem.slug}>
-            <Link href={`/blogpost/${blogitem.slug}`}>
-              <h3 className={styles.blogItemh3}>{blogitem.title}</h3></Link>
-            <p className={styles.blogItemp}>{blogitem.content.substr(0, 140)}...</p>
-            <Link href={`/BlogPosts/${blogitem.slug}`}><button className={styles.btn}>Read More</button></Link>
+          return <div key={blogitem._id}>
+            <Link href={`/blogpost/${blogitem._id}`}>
+              <h3 className={styles.blogItemh3}>{blogitem.Title}</h3></Link>
+            <p className={styles.blogItemp}>{blogitem.Content}...</p>
+            <Link href={`/BlogPosts/${blogitem._id}`}><button className={styles.btn}>Read More</button></Link>
           </div>
         })}
       </InfiniteScroll>
@@ -48,11 +48,12 @@ export default Blogs;
 
 
 export async function getServerSideProps(context) {
-    let data = await fetch('http://localhost:3000/api/blogs?count=1')
+    let data = await fetch('http://localhost:3000/api/getBlogsFromMongoDB?count=1')
+    console.log(data)
     let allBlogs = await data.json()
-
+console.log(allBlogs)
     return {
-        props: { allBlogs }, // will be passed to the page component as props
+        props: { allBlogs:allBlogs.data }, // will be passed to the page component as props
     }
 }
 
