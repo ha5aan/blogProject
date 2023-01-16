@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     let blog = new BlogMaintainaince();
     await blog.makeConnection()
 let data= await blog.getBlogByID(req.query.slug)
-    console.log(data)
-   return  res.status(200).json(JSON.parse(data))
+   // console.log(data)
+   return  res.status(200).json(data)
   
 }

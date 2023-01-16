@@ -1,4 +1,5 @@
 import MDBConnect from "../lib/mongodb"
+var mongo = require('mongodb');
 export class BlogMaintainaince{
 
 
@@ -20,9 +21,11 @@ async postObject(bodyObject){
    return RecordInserted.ops[0]
 }
 async getBlogByID(blogId){
-    console.log(blogId)
-    let selectedBlogs =await this.database.collection("Blog").findOne({_id:{oid:blogId}});
-    console.log(selectedBlogs)
+    console.log(blogId,"blogID")
+    var o_id = new mongo.ObjectID(blogId);
+
+    let selectedBlogs =await this.database.collection("Blog").findOne({_id:o_id});
+    console.log(selectedBlogs,"ReturnedBLog")
        return  selectedBlogs
 }
 }

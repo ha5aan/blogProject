@@ -1,13 +1,6 @@
-// import { MongoClient } from "mongodb";
-// import connectToMongo from "../../lib/mongodb"
-// import ConnectToDatabase from "../../middleware/ConnectionFile";
-// import connectionToDBCHECK from "../../lib/mongodb"; 
-//import {MDBConnect} from "../../lib/mongodb"
-// import MDBConnect from "../../lib/mongodb";
 import { BlogMaintainaince } from "../../utilityClass/BlogRepository";
 
-// const uri = "mongodb+srv://hasaan:hasaan654321@cluster0.tavhveu.mongodb.net/?retryWrites=true&w=majority";
-// const client = new MongoClient(uri);
+
 
 
 

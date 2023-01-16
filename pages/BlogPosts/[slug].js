@@ -9,9 +9,9 @@ const Post = (props) => {
 
   return <div className={styles.container}>
   <main className={styles.main}>
-      <h1>{blog && blog.title}</h1>
+      <h1>{blog && blog.Title}</h1>
       <hr />
-      {blog && <div  dangerouslySetInnerHTML={createMarkup(blog.content)}/> }
+      {blog && <div  dangerouslySetInnerHTML={createMarkup(blog.Content)}/> }
                  
   </main>
 </div>;
