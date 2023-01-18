@@ -1,8 +1,13 @@
 .container {
     max-width: 45vw;
     margin: auto;
-    border: 1px solid blueviolet;
+    border: 2px solid lightgray;
     text-align: center;
+    margin-top: 3%;
+    padding: 2% 0%;
+    border-radius: 20px;
+    box-shadow: 10px 10px 100px salmon;
+    margin-bottom: 20%;
 }
 
 .mb3 {
@@ -11,4 +16,57 @@
 
 .formlabel {
     margin: 0px 14px;
+    font-size: large;
+    font-weight: bold;
 }
+
+.btn {
+    color: white;
+    background: black;
+    padding: 7px 6px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 12px;
+    margin-bottom: 9px;
+    font-size: large;
+    width: fit-content;
+  
+}
+
+  .formControl{
+    width: 40%;
+    height: 40px;
+    font-size: large;
+    
+  }
+.heading{
+margin-bottom: 5%;
+}
+.formText{
+    font-size: small;
+    color: rgba(0, 0, 0, 0.671);
+}
+@media only screen and (max-width: 768px) {
+   
+    .container {
+        max-width: 95%;
+        /* margin: auto; */
+        /* border: 1px solid blueviolet; */
+        border: 1px solid lightgray;
+
+        text-align: center;
+        /* margin: 0px; */
+        margin-top: 10%;
+        /* padding: 5%; */
+        border-radius: 20px;
+        box-shadow: 10px 10px 100px salmon;
+
+    }
+    .formControl{
+        width: 80%;
+        height: 50px;
+        font-size: large;
+        
+      }
+
+  }

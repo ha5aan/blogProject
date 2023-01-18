@@ -49,27 +49,28 @@ const Contact = () => {
 
 
     return <div className={styles.container}>
-        <h1>Contact Us</h1>
-   
+        <h1 className={styles.heading}>Contact Us</h1>
+   <div className={styles.form}>
    <form onSubmit={handleSubmit}>
             <div className={styles.mb3}>
-                <label htmlFor="name" className={styles.formlabel}>Enter your name</label>
-                <input type="text" value={name} onChange={handleChange} className="form-control" id="name" name='name' aria-describedby="emailHelp" />
+                <label htmlFor="name" className={styles.formlabel}>Enter your name</label><br/>
+                <input type="text" value={name} onChange={handleChange} className={styles.formControl} id="name" name='name' aria-describedby="emailHelp" />
             </div>
             <div className={styles.mb3}>
                 <label htmlFor="email" className={styles.formlabel}>Email address</label>
-                <input type="email" value={email} onChange={handleChange} className="form-control" name='email' id="email" aria-describedby="emailHelp" />
-                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                <br/>
+                <input type="email" value={email} onChange={handleChange} className={styles.formControl} name='email' id="email" aria-describedby="emailHelp" />
+                <div id="emailHelp" className={styles.formText}>We`ll never share your email with anyone else.</div>
             </div>
          
             <div className={styles.mb3}>
-                <label htmlFor="desc">Elaborate your concern</label>
-                <textarea value={desc} onChange={handleChange} className="form-control" placeholder="Write your concern here" name='desc' id="desc" />
+                <label htmlFor="desc" className={styles.formlabel}>Comments / Concerns </label><br/>
+                <textarea value={desc} onChange={handleChange} className={styles.formControl} placeholder="Write your comments/Concerns here" name='desc' rows="10" id="desc" />
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className={styles.btn}>Submit</button>
         </form>
    
-   
+        </div>
    </div>;
 };
  

@@ -10,8 +10,8 @@ const Blogs = (props) => {
     const [count, setCount] = useState(1)
  
     const fetchData = async () => {
-        let d = await fetch(`http://localhost:3000/api/getBlogsFromMongoDB/?count=${count + 1}`)
-        setCount(count + 1)
+        let d = await fetch(`http://localhost:3000/api/getBlogsFromMongoDB/?count=${count + 2}`)
+        setCount(count + 2)
         let data = await d.json()
         setBlogs(data.data)
     };
@@ -19,6 +19,7 @@ const Blogs = (props) => {
 
 
     return  <div className={styles.container}>
+      <h1 className={styles.heading}>All Blogs </h1>
     <main className={styles.main}>
     <InfiniteScroll
         dataLength={blogs.length} //This is important field to render the next data
@@ -48,7 +49,7 @@ export default Blogs;
 
 
 export async function getServerSideProps(context) {
-    let data = await fetch('http://localhost:3000/api/getBlogsFromMongoDB?count=1')
+    let data = await fetch('http://localhost:3000/api/getBlogsFromMongoDB?count=2')
     console.log(data)
     let allBlogs = await data.json()
 console.log(allBlogs)
