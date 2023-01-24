@@ -5,7 +5,7 @@ margin-top: 50px;
 }
 .mainnav{
     display: block;
-    z-index: 5;
+    z-index: 200000;
 }
 .mainnav ul li{
     margin: 0 24px;

@@ -11,7 +11,7 @@ this.database= await this.mongoDBObject.openConnection()
 
 
  async getAllBlogs(numberOfBlogs) {
- let allBlogs =await this.database.collection("Blog").find({}).limit(numberOfBlogs).toArray();
+ let allBlogs =await this.database.collection("Blog").find({}).sort({_id:-1}).limit(numberOfBlogs).toArray();
  console.log(allBlogs)
     return  allBlogs
 }
